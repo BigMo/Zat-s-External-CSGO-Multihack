@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1561E28B-0C85-4665-9484-45E27E8D3B9A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>laExternalMulti</RootNamespace>
+    <AssemblyName>laExternalMulti</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\mosHack\mosHack\bin\Debug\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\mosHack\mosHack\bin\Debug\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectSound, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\mosHack\mosHack\bin\Debug\SharpDX.DirectSound.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\mosHack\mosHack\bin\Debug\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\mosHack\mosHack\bin\Debug\SharpDX.XAudio2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Objects\frmOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Objects\frmOverlay.Designer.cs">
+      <DependentUpon>frmOverlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\GameController.cs" />
+    <Compile Include="Objects\Geometry.cs" />
+    <Compile Include="Objects\Implementation\CSGO\CSGOGameController.cs" />
+    <Compile Include="Objects\Implementation\CSGO\CSGOImplementation.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\AimMethods\AimMethodImplementation.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\AimMethods\AimMethodResult.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\AimMethods\LowestHP.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\AimMethods\NearestToCrosshair.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\AimMethods\NearestToPlayer.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\AimMethods\RageMode.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\BSP.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Enums\ContentsFlag.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Enums\LumpType.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Enums\SurfFlag.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Brush.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Brushside.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Face.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Header.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Leaf.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Lump.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Node.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\BSP\Structs\Plane.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Damage.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Entity.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\AimBone.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\AimMethod.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\ClassID.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\LifeState.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\OnOff.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\PlayerState.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\SignOnState.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\SpectatorView.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\Target.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\Team.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\YesNo.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Enums\ZoomLevel.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\GlowObjectDefinition.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Player.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\Skeleton.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\WeaponData\WeaponHandler.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Data\WeaponData\WeaponType.cs" />
+    <Compile Include="Objects\Implementation\CSGO\frmCSGOOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Objects\Implementation\CSGO\GameOffsets.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\Crosshair.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\CSGOControl.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\CSGOMenu\LoadActionMenuItem.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\CSGOMenu\SaveActionMenuItem.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\CSGOTheme.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\ESP.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\PlayerInformation.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\PlayerListMenu.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\Radar.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\StatsGraph\DeathsStats.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\StatsGraph\KDStats.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\StatsGraph\KillsStats.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\StatsGraph\ScoreStats.cs" />
+    <Compile Include="Objects\Implementation\CSGO\UI\StatsGraph\StatsGraph.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Updaters\AimBot.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Updaters\CPUUpdater.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Updaters\MemoryUpdater.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Updaters\RecoilControl.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Updaters\SoundESP.cs" />
+    <Compile Include="Objects\Implementation\CSGO\Updaters\TriggerBot.cs" />
+    <Compile Include="Objects\Implementation\GameImplementation.cs" />
+    <Compile Include="Objects\IO\UtilityReader.cs" />
+    <Compile Include="Objects\Matrix4x4.cs" />
+    <Compile Include="Objects\SigScanner.cs" />
+    <Compile Include="Objects\SoundManager.cs" />
+    <Compile Include="Objects\UI\Control.cs" />
+    <Compile Include="Objects\UI\Events\OptionChangedEventArgs.cs" />
+    <Compile Include="Objects\UI\Events\ValueChangedEventArgs.cs" />
+    <Compile Include="Objects\UI\FactoryManager.cs" />
+    <Compile Include="Objects\UI\Label.cs" />
+    <Compile Include="Objects\UI\ListPanel.cs" />
+    <Compile Include="Objects\UI\Menu\ActionMenuItem.cs" />
+    <Compile Include="Objects\UI\Menu\BackMenuItem.cs" />
+    <Compile Include="Objects\UI\Menu\KeyMenuItem.cs" />
+    <Compile Include="Objects\UI\Menu\Menu.cs" />
+    <Compile Include="Objects\UI\Menu\MenuItem.cs" />
+    <Compile Include="Objects\UI\Menu\SubMenuItem.cs" />
+    <Compile Include="Objects\UI\Menu\TrackbarMenuItem.cs" />
+    <Compile Include="Objects\UI\Menu\ValueMenuItem.cs" />
+    <Compile Include="Objects\UI\Panel.cs" />
+    <Compile Include="Objects\UI\ProgressBar.cs" />
+    <Compile Include="Objects\UI\ProgressBarTheme.cs" />
+    <Compile Include="Objects\UI\Theme.cs" />
+    <Compile Include="Objects\Updaters\DrawUpdater.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objects\Updaters\InputUpdater.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objects\Updaters\IUpdater.cs" />
+    <Compile Include="Objects\Updaters\ThreadedUpdater.cs" />
+    <Compile Include="Objects\Updaters\TickUpdater.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objects\Updaters\TimerUpdater.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objects\WinAPI.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Objects\frmOverlay.resx">
+      <DependentUpon>frmOverlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="bin\stock_high.csgo.cfg" />
+    <None Include="bin\stock_low.csgo.cfg" />
+    <None Include="bin\stock_mid.csgo.cfg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button24.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flashlight1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heartbeatloop.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nvg_off.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suit_denydevice.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blip1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blip2.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
